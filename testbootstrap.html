@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree-Structured Progress Menu</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .progress-menu .nav-link {
+      padding: 0.5rem 1.5rem;
+    }
+
+    .progress-menu .nav-link.active {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Tree-Structured Progress Menu</h1>
+    <ul class="nav flex-column progress-menu">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Step 1: Personal Information</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Step 2: Account Setup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Step 3: Payment Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Step 4: Confirmation</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

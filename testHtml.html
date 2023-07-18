@@ -1,0 +1,58 @@
+<!<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>div test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      align : center;
+    }
+    table {
+      width: 100%;
+    }
+    .navi {
+      width: 300px;
+    }
+    .content {
+      width: 300px;
+    }
+    .footer {
+      width: 300px;
+      margin: auto;
+      border: 1px solid black;
+    }
+    /* Use a media query to add a breakpoint at 800px: */
+    @media screen and (max-width: 800px) {
+      .left, .main, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      }
+    }
+  </style>
+  <script type="text/javascript">
+  </script>
+</head>
+<body>
+  <div id="navi">
+    <table>
+      <tr>
+        <td>Menu1</td><td>Menu2</td><td>Menu3</td><td>Menu4</td><td>Menu5</td>
+      </tr>
+    </table>
+  </div>
+  <div id="content">
+    <div>
+      <table>
+        <tr>
+          <td>content</td>
+        </tr>
+      </table>
+    <div>
+  </div>
+  <div id="footer">
+    <tr>
+      <td>footer</td>
+    </tr>
+  </div>
+</body>
+</html>

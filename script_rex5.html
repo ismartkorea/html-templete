@@ -1,0 +1,17 @@
+<script>
+const str = "duuid='12312312' cno='1231231'";
+const regex = /(?=.*cno='(\d+)')(?=.*duuid='(\d+)')|(?=.*duuid='(\d+)')(?=.*cno='(\d+)')/;
+const match = str.match(regex);
+
+if (match) {
+  const cno = match[1] || match[4];
+  const duuid = match[2] || match[3];
+
+  // do something with cno and duuid values
+  console.log("cno:", cno);
+  console.log("duuid:", duuid);
+} else {
+  console.log("No match found");
+}
+
+</script>

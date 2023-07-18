@@ -1,0 +1,28 @@
+<script>
+
+function extractCnoAndDuuid(str) {
+  const cnoRegex = /cno=['"](\d+)['"]/;
+  const duuidRegex = /duuid=['"]([\w-]+)['"]/;
+  
+  const cnoMatch = str.match(cnoRegex);
+  const duuidMatch = str.match(duuidRegex);
+  
+  if (cnoMatch && duuidMatch) {
+    const cno = cnoMatch[1];
+    const duuid = duuidMatch[1];
+    return { cno, duuid };
+  }
+  
+  // handle error case where either cno or duuid is missing
+  throw new Error('Invalid string format');
+}
+const str1 = "cno='1231231' duuid='123-1g3gfd:fsdf:312'";
+const str2 = "duuid='123-1g3gfd:fsdf:312' cno='1231231'";
+
+const { cno: cno1, duuid: duuid1 } = extractCnoAndDuuid(str1);
+console.log(cno1, duuid1); // prints "1231231" and "123-1g3gfd:fsdf:312"
+
+const { cno: cno2, duuid: duuid2 } = extractCnoAndDuuid(str2);
+console.log(cno2, duuid2); // prints "1231231" and "123-1g3gfd:fsdf:312"
+
+</script>

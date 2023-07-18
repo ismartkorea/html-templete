@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Data</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
+</head>
+<body>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Extn.</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+<script type="text/javascript">
+$(document).ready(function () {
+	try {
+		$('#example').DataTable({
+			ajax: 'data/objects4.txt',
+			success: function(data) {
+				console.log("data="+data);
+			},
+			columns: [
+				{ data: 'name' },
+				{ data: 'position' },
+				{ data: 'office' },
+				{ data: 'extn' },
+				{ data: 'start_date' },
+				{ data: 'salary' },
+			],
+		   columnDefs: [
+				{ "visible": false, "targets": 0 }
+		    ]			
+		});
+	} catch(e) {
+		console.log("error="+e);
+	}
+});
+</script>    
+</body>
+</html>

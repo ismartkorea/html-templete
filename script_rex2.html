@@ -1,0 +1,20 @@
+<script>
+const str = "cno='1231231' num2='12312312'";
+
+const regex = /cno='(\d+)'/g;
+
+const regex2 = /num(\d+)='(\d+)'/g;
+
+let match;
+
+const values = {};
+
+while ((match = regex.exec(str)) !== null) {
+  const num = match[1];
+  const value = match[2];
+  values[`num${num}`] = value;
+}
+
+console.log(values); // { num1: 1231231, num2: 12312312 }
+
+</script>
